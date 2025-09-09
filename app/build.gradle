@@ -1,18 +1,25 @@
-apply plugin: 'android'
+apply plugin: 'com.android.application'
 android {
-    compileSdkVersion 19
-    buildToolsVersion '20.0.0'
+    compileSdkVersion 21
+    namespace 'com.sound.ampache'
+
 
     defaultConfig {
         minSdkVersion 14
+        targetSdkVersion 21
     }
 
     buildTypes {
         release {
-            runProguard false
+            minifyEnabled true
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.txt'
         }
     }
+
+    buildFeatures {
+        aidl true
+    }
+
 }
 
 dependencies {

@@ -6,7 +6,7 @@ package com.sound.ampache.service;
 
 // Special types that we're using
 import com.sound.ampache.objects.Media;
-import com.sound.ampache.service.Messenger;
+import com.sound.ampache.service.IMessenger;
 
 interface IPlayerService {
 	// Player Status

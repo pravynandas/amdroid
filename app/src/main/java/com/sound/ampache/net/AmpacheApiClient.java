@@ -86,7 +86,10 @@ public class AmpacheApiClient
 		reader.setContentHandler(hand);
 		try {
 			reader.parse(new InputSource(fetchFromServer("auth=" + this.authToken)));
-			if (hand.errorCode == 401) {
+			if (hand.errorCode > 0) amdroid.logger.logWarning("error=", String.valueOf(hand.errorCode));
+			if (hand.errErrorCode > 0) amdroid.logger.logWarning("received errorCode", String.valueOf(hand.errErrorCode));
+			if (hand.errorCode == 401 || hand.errErrorCode == 4701) {
+				amdroid.logger.logInfo("Re-authenticating..");
 				this.perform_auth_request();
 			}
 		} catch (MalformedURLException e) {

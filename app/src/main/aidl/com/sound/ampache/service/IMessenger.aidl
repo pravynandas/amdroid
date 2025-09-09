@@ -4,7 +4,7 @@ package com.sound.ampache.service;
 
 import android.os.Messenger;
 
-parcelable Messenger;
+parcelable IMessenger;
 
 /*
  * --> README <---

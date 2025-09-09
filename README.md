@@ -6,9 +6,19 @@ Ampache client for Android. Allows streaming music from any Ampache server.
 ![](https://raw.githubusercontent.com/Dejvino/amdroid/master/screenshot_01.png)
 
 ## History
+Update Sep, 2025:
+Recent update includes running the app successfully in android studio with following build stack.
+Android Studio Ladybug | 2024.2.1 Patch 3
+JDK: Java 1.8.0_292
+Gradle Wrapper: gradle-6.7.1-bin.zip
+Gradle Build Tools: 4.2.2
+Minimum SDK: 14
+Target SDK: 21
+Compile SDK: 21
+
 By Me (pravynandas):
 Since There are not many changes in recent years by the fork of Dejvino, I wanted to take the resposibility of moving it even further.
-I see a great skope of improvement in this project and wanted to build something great of this foundation.
+I see a great scope of improvement in this project and wanted to build something great of this foundation.
 
 By Dejvino:
 This is a fork of the official "amdroid-h" repo.

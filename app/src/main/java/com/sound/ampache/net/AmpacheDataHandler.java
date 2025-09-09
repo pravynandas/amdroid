@@ -17,8 +17,10 @@ import java.util.ArrayList;
 	public ArrayList<ampacheObject> data = new ArrayList();
 	public String error = null;
 	public int errorCode = 0;
+	public int errErrorCode = 0;
 	protected CharArrayWriter contents = new CharArrayWriter();
 
+	private boolean found = false;
 	public void startDocument() throws SAXException
 	{
 
@@ -40,8 +42,18 @@ import java.util.ArrayList;
 	                         Attributes attr) throws SAXException
 	{
 
-		if (localName.equals("error"))
-			errorCode = Integer.parseInt(attr.getValue("code"));
+		if (!found && "error".equalsIgnoreCase(localName)) {
+			String code = attr.getValue("code");
+			if (code != null) {
+				errorCode = Integer.parseInt(code);
+				found = true;
+			}
+			String errCode = attr.getValue("errorCode");
+			if (errCode != null) {
+				errErrorCode = Integer.parseInt(errCode);
+				found = true;
+			}
+		}
 		contents.reset();
 	}
 
